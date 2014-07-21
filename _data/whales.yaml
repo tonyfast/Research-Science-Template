@@ -1,0 +1,40 @@
+title: Whales
+data:
+- name: Whales
+  description: some description
+  images:
+    - type: img
+      # Using this for a demo with Surya
+      src: "https://dl.dropboxusercontent.com/u/22455492/CroppedWhales.jpg"
+      alt: "whales"
+  keys:
+    hasCrack: True
+    number of whales: 2
+
+- name: Whales
+  description: some description
+  keys:
+    hasCrack: True
+    number of whales: 2
+
+- name: Whales
+  description: some description
+  images:
+    - type: img
+      # Using this for a demo with Surya
+      src: "https://dl.dropboxusercontent.com/u/22455492/CroppedWhales.jpg"
+      alt: "whales"
+  keys:
+    hasCrack: True
+    number of whales: 2
+
+- name: Whales
+  description: some description
+  images:
+    - type: img
+      # Using this for a demo with Surya
+      src: "https://dl.dropboxusercontent.com/u/22455492/CroppedWhales.jpg"
+      alt: "whales"
+  keys:
+    hasCrack: True
+    number of whales: 2
