@@ -3,6 +3,8 @@ data:
 - name: Whales
   description: some description
   images:
+    - type: blank
+    - type: blank
     - type: img
       src: "https://dl.dropboxusercontent.com/u/22455492/CroppedWhales.jpg"
       alt: "whales"
