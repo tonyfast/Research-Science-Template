@@ -6,6 +6,7 @@ data:
     - type: blank
     - type: blank
     - type: img
+      # Using this for a demo with Surya
       src: "https://dl.dropboxusercontent.com/u/22455492/CroppedWhales.jpg"
       alt: "whales"
   keys:
