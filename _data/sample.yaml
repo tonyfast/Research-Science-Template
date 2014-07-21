@@ -1,0 +1,102 @@
+# Top level alias of the dataset
+title: Title of the dataset
+tags:
+  - tag1
+  - tag2
+description: |
+  # The pipe character makes a long string
+  This is a long description that describes the dataset.  It is
+  a short abstract that gives meaning to its title.
+author:
+  # Directly attach user information to this file for redundancy when this file is shared
+  # and accessed later on.
+  name: Tony Fast
+  email: tony.fast@gmail.com
+  affiliation: Georgia Institute of Technology
+  location: Atlanta, GA
+  # Arbitrary keys can used in YAML files.  They can also be used to add enable
+  # external widgets using include files.
+  gravatar:
+    hash: f55298e0326454a1d72e6000fcf36b09
+  github: tonyfast
+  instagram: docfast
+  slideshare: tonyfast1
+data:
+  - name: Data Point Name #1
+    description: |
+      A short description of the data point.
+    images:
+      # Stored locally within the website
+      - graph.png
+      # An external image
+      - https://farm4.staticflickr.com/3919/14466781737_a37c893a07.jpg
+      - type: img
+        alt: A Screenshot from a project I am working on to share literature reviews.
+        src: https://farm4.staticflickr.com/3919/14466781737_a37c893a07.jpg
+      # A templated link
+      # name of the template
+      - type: flickr
+        farm-id: 4
+        server-id: 3919
+        photo-id: 14466781737
+        secret: a37c893a07
+        size: m
+      # Providing the appropriate secret key can give access to raw data if it is
+      # represented as an image file on Flickr.
+    keys:
+      # Key Value Pairs for user defined meta data
+      # keys contain key value pairs of strings, numerical, and boolean values that
+      # could be used in the future for discovery if these yaml files are scraped and
+      # organized in a database.
+      percent: .75 # *100% units
+      # percent is a random thing I chose because because
+      number of images: 3
+      # Spaces can be included
+      favorite tv show: Adventure Time
+      sign: aquarius
+      years: 31
+    extern:
+      # external locations of files for user to access this data
+      - https://www.dropbox.com/sh/ojehgtsbl58ijid/AAC_NTwmqFukKpniczOaAxBPa/Nanoindentation-BH113/Raw%20vs%20Microscope%20Z%20for%20Indenter%20tips.xlsx
+      # A hardlink to a file on dropbox
+      - type: dropbox
+        # THEN SOME FIELDS TO ACCESS THE DROPBOX API
+  - name: ...
+  - name: "Dataset Name #N"
+    description: |
+      A short description of the data point.
+    images:
+      # Stored locally within the website
+      - graph.png
+      # An external image
+      - https://farm4.staticflickr.com/3919/14466781737_a37c893a07.jpg
+      # A templated link
+      # name of the template
+      - type: flickr
+        farm-id: 4
+        server-id: 3919
+        photo-id: 14466781737
+        secret: a37c893a07
+        size: m
+      # Providing the appropriate secret key can give access to raw data if it is
+      # represented as an image file on Flickr.
+    keys:
+      # Key Value Pairs for user defined meta data
+      # keys contain key value pairs of strings, numerical, and boolean values that
+      # could be used in the future for discovery if these yaml files are scraped and
+      # organized in a database.
+      percent: .75 # *100% units
+      # percent is a random thing I chose because because
+      number of images: 3
+      # Spaces can be included
+      favorite tv show: Adventure Time
+      sign: aquarius
+      years: 31
+    extern:
+      # external locations of files for user to access this data
+      - https://www.dropbox.com/sh/ojehgtsbl58ijid/AAC_NTwmqFukKpniczOaAxBPa/Nanoindentation-BH113/Raw%20vs%20Microscope%20Z%20for%20Indenter%20tips.xlsx
+      # A hardlink to a file on dropbox
+      - type: dropbox
+        # THEN SOME FIELDS TO ACCESS THE DROPBOX API
+    src:
+      - "https://github.com/tonyfast/SpatialStatisticsFFT/blob/master/PairCorrelationFFT.m"

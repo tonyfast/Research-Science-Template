@@ -1,0 +1,56 @@
+---
+layout: default
+---
+
+<span class="octicon octicon-flame"></span>
+
+{% for datapages in site.data %}
+<!-- Insert Dataset information and author information -->
+<div class="row">
+
+  {% for datapoints in datapages[1]['data']%}
+
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="panel panel-default">
+      <div class="panel panel-heading">
+        <h2>{{datapoints['name']}}</h2>
+        {{datapoints['description']}}
+      </div>
+      <div class="panel panel-body">
+
+        <div class="panel">
+        <!-- Show first image listed if there is one -->
+        {% if datapoints['images'] %}
+            {% assign image={{datapoints.images[2]}} %}
+            {% include ImageExtManager.html image=image %}
+        {% else %}
+        {% endif %}
+      </div>
+        <div class="panel panel-default">
+
+           <table class="table table-striped">
+               <thead>
+                 <tr>
+                 {% for keys in datapoints['keys'] %}
+                     <th>{{keys[0]}}</th>
+                 {% endfor %}
+                </tr>
+               </thead>
+               <tbody>
+                 {% for keys in datapoints['keys'] %}
+                     <th>{{keys[1]}}</th>
+                 {% endfor %}
+               </tbody>
+
+           </table>
+        </div>
+
+
+      </div>
+      <div class="panel panel-footer">{{datapoints}}
+      </div>
+    </div>
+    </div>
+  {% endfor %}
+</div>
+{% endfor %}
