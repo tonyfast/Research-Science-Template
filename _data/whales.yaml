@@ -8,3 +8,6 @@ data:
     - type: img
       src: "https://dl.dropboxusercontent.com/u/22455492/CroppedWhales.jpg"
       alt: "whales"
+  keys:
+    hasCrack: True
+    number of whales: 2
