@@ -1,0 +1,9 @@
+{% if include.src['type'] %}
+
+    {% case include.src.type %}
+        {% when 'github' %}
+            {% include github-src.html src=include.src %}
+
+    {% endcase %}
+{% else %}
+{% endif %}

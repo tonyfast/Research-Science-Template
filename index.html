@@ -10,47 +10,58 @@ layout: default
 
   {% for datapoints in datapages[1]['data']%}
 
-    <div class="col-sm-12 col-md-6 col-lg-4">
-      <div class="panel panel-default">
+    <div class="col-sm-12 col-md-6 col-lg-6">
+      <div class="panel panel-{% cycle 'info','warning', 'default' %}">
       <div class="panel panel-heading">
         <h2>{{datapoints['name']}}</h2>
         {{datapoints['description']}}
       </div>
       <div class="panel panel-body">
-
+        <h4>Images</h4>
         <div class="panel">
         <!-- Show first image listed if there is one -->
         {% if datapoints['images'] %}
-            {% assign image={{datapoints.images[2]}} %}
+
+        <div class="image">
+            {% assign image={{datapoints.images[0]}} %}
             {% include ImageExtManager.html image=image %}
+            <div class="overlay">{{datapoints['images'] | size }} total images</div>
+          </div>
+            <!--<script>$('img').prop('title',{{datapoints['images'] | size }})</script>-->
         {% else %}
+             <img data-src="holder.js/100%x400" alt="No Images to Display">
         {% endif %}
+
       </div>
-        <div class="panel panel-default">
 
-           <table class="table table-striped">
-               <thead>
-                 <tr>
-                 {% for keys in datapoints['keys'] %}
-                     <th>{{keys[0]}}</th>
-                 {% endfor %}
-                </tr>
-               </thead>
-               <tbody>
-                 {% for keys in datapoints['keys'] %}
-                     <th>{{keys[1]}}</th>
-                 {% endfor %}
-               </tbody>
-
-           </table>
-        </div>
+      {% assign keys=datapoints['keys'] %}
+      {% include datatable.html data=keys %}
 
 
       </div>
-      <div class="panel panel-footer">{{datapoints}}
+      <div class="panel panel-footer">
+          {% if datapoints.src %}
+              {% assign src=datapoints['src'][0] %}
+              {% include SrcExtManager.html src=src %}
+          {% else %}
+          <span class="mega-octicon octicon-circle-slash"></span> <i>No code has been linked.</i>
+          {% endif %}
+
       </div>
     </div>
     </div>
   {% endfor %}
 </div>
 {% endfor %}
+
+<!--
+<script>
+$('img').mouseover(function(){
+    $(this).css('opacity','.2');
+    $(this).next('span.text').show();
+}).mouseout(function(){
+    $(this).css('opacity','1');
+    $(this).next('span.text').hide();
+});
+</script>
+-->

@@ -22,17 +22,17 @@ author:
   instagram: docfast
   slideshare: tonyfast1
 data:
-  - name: Data Point Name #1
+  - name: "Data Point Name #1"
     description: |
       A short description of the data point.
     images:
-      # Stored locally within the website
-      - graph.png
-      # An external image
-      - https://farm4.staticflickr.com/3919/14466781737_a37c893a07.jpg
       - type: img
         alt: A Screenshot from a project I am working on to share literature reviews.
         src: https://farm4.staticflickr.com/3919/14466781737_a37c893a07.jpg
+      # Stored locally within the website
+      - graph.png
+      # An external image
+      - "https://farm4.staticflickr.com/3919/14466781737_a37c893a07.jpg"
       # A templated link
       # name of the template
       - type: flickr
@@ -61,7 +61,7 @@ data:
       # A hardlink to a file on dropbox
       - type: dropbox
         # THEN SOME FIELDS TO ACCESS THE DROPBOX API
-  - name: ...
+  - name: dot dot dot
   - name: "Dataset Name #N"
     description: |
       A short description of the data point.
@@ -99,4 +99,8 @@ data:
       - type: dropbox
         # THEN SOME FIELDS TO ACCESS THE DROPBOX API
     src:
-      - "https://github.com/tonyfast/SpatialStatisticsFFT/blob/master/PairCorrelationFFT.m"
+      - type: github
+        user: tonyfast
+        repo: SpatialStatisticsFFT
+        sha: c50ed5706d21a50762b77f419dd87e0d9dbf7944
+        filename: Tutorials/TailNormalizedStats.m
