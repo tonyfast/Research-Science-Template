@@ -3,14 +3,22 @@
   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsenav">
       <span class="mega-octicon octicon-list-unordered white"></span>
   </button>
- <div class="collapse navbar-collapse" id="collapsenav">
+
+   <p style="display:inline;">
+     <ul class="nav navbar-nav pull-right" >
+     <li><img src="{{ site.author.gravatar | prepend:"http://www.gravatar.com/avatar/" | append:"?s=50"}}"/></li>
+     </ul>
+<div class="collapse navbar-collapse" id="collapsenav">
     <ul class="nav navbar-nav pull-right" >
       <li><br><font color="white">VIEW CONTROLS</font></li>
   <li><a href="#" id="minimize"><span class="mega-octicon octicon-chevron-up"></span></a></li>
   <li><a href="#" id="maximize"><span class="mega-octicon octicon-chevron-down"></span></a></li>
   <li><a href="#" id="magnific-popup"><span class="mega-octicon octicon-file-media"></span></a></li>
-  <li><img src="{{ site.author.gravatar | prepend:"http://www.gravatar.com/avatar/" | append:"?s=50"}}"/></li>
+
 </ul>
 </div>
+</p>
+
+
 </div>
 </nav>
