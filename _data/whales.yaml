@@ -13,6 +13,10 @@ data:
 
 - name: Whales
   description: some description
+  images:
+    - type: img
+      src: "http://photos-g.ak.instagram.com/hphotos-ak-xap1/10453952_259917710883654_477560683_n.jpg"
+      alt: "REBELLLLLLLL!!!!!!"
   keys:
     hasCrack: True
     number of whales: 2
