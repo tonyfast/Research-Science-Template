@@ -3,16 +3,18 @@ layout: default
 ---
 
 <!-- panel at top for entire collection -->
-
+<div class="row" data-spy="affix-top" id="start-a">
 {% for datapages in site.data %}
 
 <div class="container">
   <div class="row">
-    <div class="panel panel-default">
+    <div class="panel panel-{% cycle 'warning','danger'%}" >
 
       <div class="panel panel-heading">
+        <font color="black">
         <h2>{{datapages[1]['title']}}</h2>
         {{datapages[1]['description']}}
+      </font>
       </div>
       <!-- Insert Dataset information and author information -->
       <div class="panel panel-body">
@@ -20,7 +22,7 @@ layout: default
         {% for datapoints in datapages[1]['data']%}
 
         <div class="col-sm-12 col-md-6 col-lg-6" id="datapoint">
-          <div class="panel panel-warning">
+          <div class="panel panel-success">
             <div class="panel panel-heading ">
 
 
@@ -70,14 +72,14 @@ layout: default
                   {% assign keys=datapoints['keys'] %}
                   {% include datatable.html data=keys %}
                 </div>
-                {% endif %} 
+                {% endif %}
               </div>
               <div class="panel panel-footer">
                 {% if datapoints.src %}
                 {% assign src=datapoints['src'][0] %}
                 {% include SrcExtManager.html src=src %}
                 {% else %}
-                <span class="mega-octicon octicon-circle-slash"></span> <i>No code has been linked.</i>
+                <span class="octicon octicon-circle-slash"></span> <small><i>No code has been linked.</i></small>
                 {% endif %}
 
               </div>
@@ -99,7 +101,7 @@ layout: default
 
   </div>
   {% endfor %}
-
+</div>
 
 {% include magnific-popup.html %}
   <!--
