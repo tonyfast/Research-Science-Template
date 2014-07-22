@@ -1,0 +1,9 @@
+<div class="panel panel-footer">
+  {% if datapoints.src %}
+  {% assign src=datapoints['src'][0] %}
+  {% include SrcExtManager.html src=src %}
+  {% else %}
+  <span class="octicon octicon-circle-slash"></span> <small><i>No code has been linked.</i></small>
+  {% endif %}
+
+</div>
