@@ -16,8 +16,6 @@ author:
   location: Atlanta, GA
   # Arbitrary keys can used in YAML files.  They can also be used to add enable
   # external widgets using include files.
-  gravatar:
-    hash: f55298e0326454a1d72e6000fcf36b09
   github: tonyfast
   instagram: docfast
   slideshare: tonyfast1
@@ -68,7 +66,7 @@ data:
       - type: dropbox
         # THEN SOME FIELDS TO ACCESS THE DROPBOX API
   - name: dot dot dot
-  - name: "Dataset Name #N"
+  - na  me: "Dataset Name #N"
     description: |
       A short description of the data point.
     images:

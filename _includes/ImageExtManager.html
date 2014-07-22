@@ -1,10 +1,7 @@
 {% if image['type'] %}
-
     {% case include.image.type %}
         {% when 'img' %}
-
             {% include img.html image=include.image %}
-
     {% endcase %}
 {% else %}
 {% endif %}

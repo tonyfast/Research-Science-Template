@@ -16,8 +16,7 @@ author:
   location: Atlanta, GA
   # Arbitrary keys can used in YAML files.  They can also be used to add enable
   # external widgets using include files.
-  gravatar:
-    hash: f55298e0326454a1d72e6000fcf36b09
+  gravatar: f55298e0326454a1d72e6000fcf36b09
   github: tonyfast
   instagram: docfast
   slideshare: tonyfast1

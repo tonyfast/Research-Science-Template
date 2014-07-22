@@ -8,3 +8,9 @@ url: "http://yourdomain.com"
 # Build settings
 markdown: kramdown
 permalink: pretty
+
+
+author:
+  name: Tony Fast
+  email: tony.fast@gmail.com
+  gravatar: f55298e0326454a1d72e6000fcf36b09
