@@ -65,11 +65,12 @@ layout: default
                   {% endif %}
 
                 </div>
-
+                {% if datapoints['keys'] %}
                 <div class="panel">
                   {% assign keys=datapoints['keys'] %}
                   {% include datatable.html data=keys %}
                 </div>
+                {% endif %} 
               </div>
               <div class="panel panel-footer">
                 {% if datapoints.src %}
@@ -100,6 +101,7 @@ layout: default
   {% endfor %}
 
 
+{% include magnific-popup.html %}
   <!--
   <script>
   $('img').mouseover(function(){

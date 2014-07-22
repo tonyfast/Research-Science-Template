@@ -1,6 +1,5 @@
-<span class="mega-octicon octicon-mark-github"></span>
 {% if include['src']['sha'] %}
-  <a href="https://github.com/{{include.src.user}}/{{include.src.repo}}/commit/{{include.src.sha}}/{{include.src.filename}}">
-  {{include.src.user}}/{{include.src.repo}}/{{include.src.sha|truncate:10}}/{{include.src.filename}}
+<a href="https://github.com/{{include.src.user}}/{{include.src.repo}}/commit/{{include.src.sha}}/{{include.src.filename}}">
+  <span class="mega-octicon octicon-mark-github"></span>  LINKED!
 </a>
 {% endif %}

@@ -36,17 +36,17 @@ data:
         alt: A Screenshot from a project I am working on to share literature reviews.
         src: https://farm4.staticflickr.com/3919/14466781737_a37c893a07.jpg
       # Stored locally within the website
-      - graph.png
+  #    - graph.png
       # An external image
-      - "https://farm4.staticflickr.com/3919/14466781737_a37c893a07.jpg"
+  #    - "https://farm4.staticflickr.com/3919/14466781737_a37c893a07.jpg"
       # A templated link
       # name of the template
-      - type: flickr
-        farm-id: 4
-        server-id: 3919
-        photo-id: 14466781737
-        secret: a37c893a07
-        size: m
+  #    - type: flickr
+  #      farm-id: 4
+  #      server-id: 3919
+  #      photo-id: 14466781737
+  #      secret: a37c893a07
+  #      size: m
       # Providing the appropriate secret key can give access to raw data if it is
       # represented as an image file on Flickr.
     keys:
@@ -71,21 +71,6 @@ data:
   - name: "Dataset Name #N"
     description: |
       A short description of the data point.
-    images:
-      # Stored locally within the website
-      - graph.png
-      # An external image
-      - https://farm4.staticflickr.com/3919/14466781737_a37c893a07.jpg
-      # A templated link
-      # name of the template
-      - type: flickr
-        farm-id: 4
-        server-id: 3919
-        photo-id: 14466781737
-        secret: a37c893a07
-        size: m
-      # Providing the appropriate secret key can give access to raw data if it is
-      # represented as an image file on Flickr.
     keys:
       # Key Value Pairs for user defined meta data
       # keys contain key value pairs of strings, numerical, and boolean values that
