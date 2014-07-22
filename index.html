@@ -2,108 +2,127 @@
 layout: default
 ---
 
+{% include nav-bar.html %}
+
 <!-- panel at top for entire collection -->
-<div class="row" data-spy="affix-top" id="start-a">
-{% for datapages in site.data %}
+<div class="row">
+  {% for datapages in site.data %}
+{% assign cont = {{forloop.index | prepend:"cont"}} %}
 
-<div class="container">
-  <div class="row">
-    <div class="panel panel-{% cycle 'warning','danger'%}" >
+  <div class="container">
+    <div class="row">
+      <div class="panel panel-{% cycle 'success'%}">
 
-      <div class="panel panel-heading">
-        <font color="black">
-        <h2>{{datapages[1]['title']}}</h2>
-        {{datapages[1]['description']}}
-      </font>
-      </div>
-      <!-- Insert Dataset information and author information -->
-      <div class="panel panel-body">
+        <div class="panel panel-heading">
+          <font color="black">
+            <h2>{{datapages[1]['title']}}</h2>
+            {{datapages[1]['description']}}
+          </font>
+        </div>
+        <!-- Insert Dataset information and author information -->
+        <div class="panel panel-body">
 
-        {% for datapoints in datapages[1]['data']%}
+          {% for datapoints in datapages[1]['data']%}
 
-        <div class="col-sm-12 col-md-6 col-lg-6" id="datapoint">
-          <div class="panel panel-success">
-            <div class="panel panel-heading ">
-
-
-              <!-- External Links -->
-              <div class="btn-group pull-right">
-              {% if datapoints['extern'] %}
-
-                <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
-                  <span class="mega-octicon octicon-link-external"></span></button>
-                  <ul class="dropdown-menu" role="menu">
-                    {% for extern in datapoints['extern'] %}
-                    <li><a href="{{extern}}">Link</a></li>
-                    {% endfor %}
-                  </ul>
-                  {% else %}
-                  <span class="octicon octicon-link-external"></span>
-                {% endif %}
-
-                </div>
-
-<h2>{{datapoints['name']}}</h2>
-                <span class="octicon octicon-search"></span>&nbsp;&nbsp;{{datapoints['description']}}
+          <div class="col-sm-12 col-md-6 col-lg-6" >
+            <div class="panel-group" id="{{cont}}dp{{forloop.index}}">
+              <div class="panel panel-{% cycle 'info' %}">
+                <div class="panel panel-heading">
 
 
+                  <!-- External Links -->
+                  <div class="btn-group pull-right">
+                    {% if datapoints['extern'] %}
 
-              </div>
-              <div class="panel panel-body">
+                    <button class="btn btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
+                      <span class="mega-octicon octicon-link-external"></span></button>
+                      <ul class="dropdown-menu" role="menu">
+                        {% for extern in datapoints['extern'] %}
+                        <li><a href="{{extern}}">Link</a></li>
+                        {% endfor %}
+                      </ul>
+                      {% else %}
+                      <span class="octicon octicon-link-external"></span>
+                      {% endif %}
 
-                <h4>Images</h4>
-                <div class="panel">
-                  <!-- Show first image listed if there is one -->
-                  {% if datapoints['images'] %}
+                    </div><!-- btn-group -->
 
-                  <div class="image">
-                    {% assign image={{datapoints.images[0]}} %}
-                    {% include ImageExtManager.html image=image %}
-                    <div class="overlay">{{datapoints['images'] | size }} total images</div>
-                  </div>
-                  <!--<script>$('img').prop('title',{{datapoints['images'] | size }})</script>-->
-                  {% else %}
-                  <img data-src="holder.js/100%x100%" alt="No Images to Display">
-                  {% endif %}
+                    <a data-toggle="collapse" data-parent="#{{cont}}dp{{forloop.index}}" href="#col{{cont}}dp{{forloop.index}}">
+                      <font color="white"><h2>{{datapoints['name']}}</h2>
+                      <span class="octicon octicon-search"></span>&nbsp;&nbsp;{{datapoints['description']}}
+                    </font>
+                    </a>
 
-                </div>
-                {% if datapoints['keys'] %}
-                <div class="panel">
-                  {% assign keys=datapoints['keys'] %}
-                  {% include datatable.html data=keys %}
-                </div>
-                {% endif %}
-              </div>
-              <div class="panel panel-footer">
-                {% if datapoints.src %}
-                {% assign src=datapoints['src'][0] %}
-                {% include SrcExtManager.html src=src %}
-                {% else %}
-                <span class="octicon octicon-circle-slash"></span> <small><i>No code has been linked.</i></small>
-                {% endif %}
+                  </div> <!-- panel heading -->
+                  <div id="col{{cont}}dp{{forloop.index}}" class="panel-collapse collapse in">
+                    <div class="panel panel-body">
+                      <!-- Show image -->
+                      <h4>Images</h4>
+                      <div class="panel">
+                        <!-- Show first image listed if there is one -->
+                        {% if datapoints['images'] %}
 
-              </div>
-            </div>
+                        <div class="image">
+                          {% assign image={{datapoints.images[0]}} %}
+                          {% include ImageExtManager.html image=image %}
+                          <div class="overlay">{{datapoints['images'] | size }} total images</div>
+                        </div>
+                        <!--<script>$('img').prop('title',{{datapoints['images'] | size }})</script>-->
+                        {% else %}
+                        <img data-src="holder.js/100%x100%" alt="No Images to Display">
+                        {% endif %}
+
+                      </div>
+                      {% if datapoints['keys'] %}
+                      <div class="panel">
+                        {% assign keys=datapoints['keys'] %}
+                        {% include datatable.html data=keys %}
+                      </div>
+                      {% endif %}
+                    </div>
+                    {% include src-footer.html %}
+                  </div> <!--collapse div -->
+                </div> <!--datapoint panel div-->
+              </div> <!-- panel group -->
+            </div> <!-- grid -->
+            {% endfor %}
 
           </div>
-
-          {% endfor %}
         </div>
-      </div>
-    </div>
-
-    {% unless forloop.last %}
-    <center>
-    <span class="octicon octicon-arrow-down"></span>&nbsp;&nbsp;NEXT DATASET
-  </center>
-  {% endunless %}
-  <br>
-
-  </div>
-  {% endfor %}
 </div>
+</div>
+        <!-- Divider to next dataset -->
+        {% unless forloop.last %}
+        <center>
+          <span class="octicon octicon-arrow-down"></span>&nbsp;&nbsp;NEXT DATASET
+        </center>
+        {% endunless %}
+        <br>
 
-{% include magnific-popup.html %}
+
+    {% endfor %}
+  </div>
+
+  {% include magnific-popup.html %}
+
+<script>
+<!-- maximize all -->
+$('a#maximize').click(function(){
+  $('.panel-collapse.collapse').each( function(i)
+    { $(this).attr('class','panel-collapse collapse in')} )
+})
+</script>
+
+<script>
+<!-- minimize all -->
+$('a#minimize').click( function(){
+  $('.panel-collapse.collapse.in').each( function(i){
+        $(this).attr('class','panel-collapse collapse')
+    })
+})
+</script>
+
+
   <!--
   <script>
   $('img').mouseover(function(){
